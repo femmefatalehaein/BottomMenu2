@@ -2,18 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/item_menu"
+        android:id="@+id/item_1"
         android:title="menu"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:icon="@drawable/menu_vector"
         android:iconTint="@color/light_green" />
-
-
 
     <item
         android:id="@+id/item_2"
         android:title="favorite"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:icon="@drawable/ic_baseline_favorite_24"
         android:iconTint="@color/light_green"
         />
@@ -26,13 +24,13 @@
     <item
         android:id="@+id/item_4"
         android:title="community"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:icon="@drawable/ic_baseline_dynamic_feed_24"
         android:iconTint="@color/light_green"/>
     <item
         android:id="@+id/item_5"
         android:title="my"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:icon="@drawable/account_vector"
         android:iconTint="@color/light_green"/>
 

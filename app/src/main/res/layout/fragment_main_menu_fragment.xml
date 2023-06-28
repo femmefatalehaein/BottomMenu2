@@ -3,16 +3,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".main_menu_fragment"
     android:background="@color/white"
     android:id="@+id/fragment_main_menu">
 
     <!-- TODO: Update blank fragment layout -->
-
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/form_list_category_ll"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="메뉴입니다" />
+        android:layout_marginTop="1dp"
+        android:gravity="left"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        >
+
+        <android.widget.Button
+            android:id="@+id/form_list_1"
+            android:layout_width="50dp"
+            android:layout_height="32dp"
+            android:layout_marginVertical="2dp"
+            android:background="@drawable/category_selected"
+            android:gravity="center"
+            android:text="한식"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+        <android.widget.Button
+            android:id="@+id/form_list_2"
+            android:layout_width="50dp"
+            android:layout_height="32dp"
+            android:layout_marginVertical="2dp"
+            android:background="@color/transparent"
+            android:text="양식"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <android.widget.Button
+            android:id="@+id/form_list_3"
+            android:layout_width="50dp"
+            android:layout_height="32dp"
+            android:layout_marginVertical="2dp"
+            android:background="@color/transparent"
+            android:text="중식"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <android.widget.Button
+            android:id="@+id/form_list_4"
+            android:layout_width="50dp"
+            android:layout_height="32dp"
+            android:layout_marginVertical="2dp"
+            android:background="@color/transparent"
+            android:text="야식"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <android.widget.Button
+            android:id="@+id/form_list_5"
+            android:layout_width="68dp"
+            android:layout_height="32dp"
+            android:layout_marginVertical="2dp"
+            android:background="@color/transparent"
+            android:text="카페·디저트"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <android.widget.Button
+            android:id="@+id/form_list_6"
+            android:layout_width="50dp"
+            android:layout_height="32dp"
+            android:layout_marginVertical="2dp"
+            android:background="@color/transparent"
+            android:text="기타"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+
+
 </FrameLayout>
