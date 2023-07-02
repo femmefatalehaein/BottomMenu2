@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     //버튼 변수
     FloatingActionButton button;
 
-    
+
     //카테고리 버튼
 
     //NestedScrollVeiw
@@ -76,40 +76,40 @@ public class MainActivity extends AppCompatActivity {
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-             @Override
-             public boolean onNavigationItemSelected(@NonNull MenuItem item)
-             {
-                 switch (item.getItemId()){
-                     case R.id.item_1:
-                         getSupportFragmentManager().beginTransaction().replace(R.id.container,menu_fragment).commit();
-                         return true;
-                     case R.id. item_2:
-                         getSupportFragmentManager().beginTransaction().replace(R.id.container, favorite_fragment).commit();
-                         return true;
-                     case R.id. item_4:
-                         getSupportFragmentManager().beginTransaction().replace(R.id.container, community_fragment).commit();
-                         return true;
-                     case R.id. item_5:
-                         getSupportFragmentManager().beginTransaction().replace(R.id.container, account_fragment).commit();
-                         return true;
-                     default:
-                         getSupportFragmentManager().beginTransaction().replace(R.id.container,menu_fragment).commit();
-                 }
-                 return false;
-             }
-         });
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item)
+            {
+                switch (item.getItemId()){
+                    case R.id.item_1:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,menu_fragment).commit();
+                        return true;
+                    case R.id. item_2:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, favorite_fragment).commit();
+                        return true;
+                    case R.id. item_4:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, community_fragment).commit();
+                        return true;
+                    case R.id. item_5:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, account_fragment).commit();
+                        return true;
+                    default:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,menu_fragment).commit();
+                }
+                return false;
+            }
+        });
 
 
         //가운데 QR인식 버튼 누르면, 큐알 인식 activity으로(SecondActivity) 넘어간다.
-         button.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                 startActivity(intent);
-             }
-         });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
 
-         //리사이클러 뷰
+        //리사이클러 뷰
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
 
@@ -223,8 +223,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
-
 }

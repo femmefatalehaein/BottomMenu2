@@ -7,16 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.Holder> {
+public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Holder>{
     private Context context;
-    private List<MenuItem> list = new ArrayList<>();
+    private List<FavoriteItem> list = new ArrayList<>();
 
-    public MenuAdapter(Context context, List<MenuItem> list) {
+    public FavoriteAdapter(Context context, List<FavoriteItem> list) {
         this.context = context;
         this.list = list;
     }
@@ -25,7 +26,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.Holder> {
     // row layout을 화면에 뿌려주고 holder에 연결
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.board_menu_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.board_favorite_item, parent, false);
         Holder holder = new Holder(view);
         return holder;
     }
@@ -39,9 +40,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.Holder> {
         // 각 위치에 문자열 세팅
         int itemposition = position;
         holder.name.setText(list.get(itemposition).name);
-        holder.price.setText(list.get(itemposition).price);
-        holder.benefit.setText(list.get(itemposition).benefit);
-        Log.d("MenuAdapter", "onBindViewHolder" + itemposition);
+        holder.menu.setText(list.get(itemposition).menu);
+        holder.size.setText(list.get(itemposition).size);
+        Log.d("FavoriteAdapter", "onBindViewHolder" + itemposition);
     }
 
     // 몇개의 데이터를 리스트로 뿌려줘야하는지 반드시 정의해줘야한다
@@ -53,14 +54,14 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.Holder> {
     // ViewHolder는 하나의 View를 보존하는 역할을 한다
     public class Holder extends RecyclerView.ViewHolder{
         public TextView name;
-        public TextView price;
-        public TextView benefit;
+        public TextView menu;
+        public TextView size;
 
         public Holder(View view){
             super(view);
-            name = (TextView) view.findViewById(R.id.menu_item_name_tv);
-            price = (TextView) view.findViewById(R.id.menu_item_price_sub_tv);
-            benefit = (TextView) view.findViewById(R.id.menu_item_package_sub_tv);
+            name = (TextView) view.findViewById(R.id.favorite_item_name_tv);
+            menu = (TextView) view.findViewById(R.id.favorite_item_menu_sub_tv);
+            size = (TextView) view.findViewById(R.id.favorite_item_size_sub_tv);
         }
     }
 }
