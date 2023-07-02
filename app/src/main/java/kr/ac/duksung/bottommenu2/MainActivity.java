@@ -38,15 +38,15 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements MapView.CurrentLocationEventListener, MapView.MapViewEventListener {
+
+
     BottomNavigationView bottomNavigationView;
     FrameLayout container;
-
     private MapView mapView;
-
     private ViewGroup mapViewContainer;
 
-
     //fragment 변수선언
+
     main_menu_fragment menu_fragment;
     main_account_fragment account_fragment;
     main_community_fragment community_fragment;
@@ -304,8 +304,13 @@ public class MainActivity extends AppCompatActivity implements MapView.CurrentLo
 
     }
 
+
+    //MapView.CurrentLocationEventListener, MapView.MapViewEventListener interface 메소드
+
     @Override
     public void onCurrentLocationUpdate(MapView mapView, MapPoint mapPoint, float v) {
+
+
 
     }
 

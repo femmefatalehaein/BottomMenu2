@@ -11,8 +11,9 @@
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1205" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/menu_vector.xml" value="0.1" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/qr_scanner.xml" value="0.1" />
+        <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/transparent.xml" value="0.162" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/transparent_bottom.xml" value="0.1" />
-        <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/activity_main.xml" value="0.10400000000000001" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/activity_main_to_community.xml" value="0.12132725430597771" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/activity_second.xml" value="0.10885416666666667" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/fragment_first.xml" value="0.2" />
@@ -24,9 +25,10 @@
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/fragment_main_qr_fragment.xml" value="0.24947916666666667" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/fragment_second.xml" value="0.1" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/fragment_third.xml" value="0.2" />
-        <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/item_view.xml" value="0.22604166666666667" />
+        <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/item_view.xml" value="0.176" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/menu/bottom_menu.xml" value="0.264" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/xml/netrwork_security_config.xml" value="0.12708333333333333" />
       </map>
     </option>
   </component>

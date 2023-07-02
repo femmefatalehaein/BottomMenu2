@@ -106,36 +106,37 @@
             <!--상단 메뉴 카테고리 끝-->
 
             <!--main메뉴 nestedScrollView 시작-->
-                <androidx.core.widget.NestedScrollView
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    >
 
-                    <LinearLayout
 
-                        android:orientation="vertical"
+                    <RelativeLayout
+                        android:id="@+id/map_view"
+                        android:background="@color/teal_200"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        >
-
-                        <RelativeLayout
-                            android:id="@+id/map_view"
-                            android:background="@color/teal_200"
-                            android:layout_width="match_parent"
-                            android:layout_height="400dp">
+                        android:layout_height="400dp">
 
 
 
-                        </RelativeLayout>
+                    </RelativeLayout>
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerView"
-                            android:background="@color/white"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        </androidx.recyclerview.widget.RecyclerView>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:background="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    </androidx.recyclerview.widget.RecyclerView>
 
-                    </LinearLayout>
-                </androidx.core.widget.NestedScrollView>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
 
             <!--main메뉴 nestedScrollView 끝-->
 
@@ -160,7 +161,7 @@
 
 
 
-<!--하단메뉴바-->
+    <!--하단메뉴바-->
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/main_bottomAppBar"
