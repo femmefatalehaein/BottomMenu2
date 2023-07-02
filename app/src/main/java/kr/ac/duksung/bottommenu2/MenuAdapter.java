@@ -41,7 +41,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.Holder> {
         holder.name.setText(list.get(itemposition).name);
         holder.price.setText(list.get(itemposition).price);
         holder.benefit.setText(list.get(itemposition).benefit);
-        Log.d("MenuAdapter", "onBindViewHolder" + itemposition);
+        Log.d("StudyApp", "onBindViewHolder" + itemposition);
     }
 
     // 몇개의 데이터를 리스트로 뿌려줘야하는지 반드시 정의해줘야한다
