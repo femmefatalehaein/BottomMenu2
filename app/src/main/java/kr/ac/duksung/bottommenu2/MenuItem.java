@@ -54,7 +54,6 @@ public class MenuItem {
     public void setPrice(String price) {
         this.price = price;
     }
-
     public void setBenefit(String benefit) {
         this.benefit = benefit;
     }
