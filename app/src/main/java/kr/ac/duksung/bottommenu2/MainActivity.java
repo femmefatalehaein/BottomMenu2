@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import kr.ac.duksung.bottommenu2.Item;
 
 import android.os.Build.VERSION;
 import android.os.Build;
@@ -26,16 +27,26 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import net.daum.android.map.MapViewEventListener;
+import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
 import net.daum.mf.map.api.MapView;
+
+
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements MapView.CurrentLocationEventListener, MapView.MapViewEventListener {
 
@@ -55,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements MapView.CurrentLo
     //버튼 변수
     FloatingActionButton button;
 
-
     //카테고리 버튼
 
     //NestedScrollVeiw
@@ -67,6 +77,40 @@ public class MainActivity extends AppCompatActivity implements MapView.CurrentLo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        adapter = new Adapter();
+
+
+        /*-------------------데이터 출력하기 start -----------------------------*/
+        Call<List<Item>> call;
+        call = retrofit_client.getApiService().getItems();
+        call.enqueue(new Callback<List<Item>>(){
+            //콜백 받는 부분
+            @Override
+            public void onResponse(Call<List<Item>> call, Response<List<Item>> response) {
+                List<Item> result = response.body();
+
+                Log.d("서버통신","성공");
+                for (int i = 0; i < result.size(); i++) {
+                    String str = result.get(i).getMenusname();
+                    adapter.setArrayData(str);
+                }
+
+                recyclerView.setAdapter(adapter);
+                Log.d("서버통신","내용은 : "+result.get(1).getMenusname());
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Item>> call, Throwable t) {
+
+                Log.d("서버통신","실패");
+                Log.d("서버통신",t.getMessage());
+            }
+        });
+
+        /*-------------------데이터 출력하기 end ---------------------------*/
+
+        /*----------------------지도 api 출력하기 start---------------------*/
 
         try {
             PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
@@ -107,7 +151,32 @@ public class MainActivity extends AppCompatActivity implements MapView.CurrentLo
         mapViewContainer.addView(mapView);
 
         mapView.setMapViewEventListener(this);
+        //현재위치 설정하기
         mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
+
+
+        // 마커 생성 및 설정
+        MapPOIItem marker = new MapPOIItem();
+        marker.setItemName("Default Marker");
+        marker.setTag(0);
+
+        //지도중심점 바꾸기 -> 덕성여자대학교(지도 뷰의 기본화면)
+
+        marker.setMapPoint(MapPoint.mapPointWithGeoCoord(37.651214326349994, 127.01312795182758));
+        marker.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+        mapView.addPOIItem(marker);
+
+        // 지도 배율
+        mapView.setZoomLevel(1, true);
+
+        // 줌 인 허용
+        mapView.zoomIn(true);
+
+        // 줌 아웃 허용
+        mapView.zoomOut(true);
+
+        /*----------------------지도 api 출력하기end-----------------------*/
 
 
         //객체 생성
@@ -129,6 +198,8 @@ public class MainActivity extends AppCompatActivity implements MapView.CurrentLo
         button = findViewById(R.id.button);
         // 상단 버튼누르면 해결된다.
         initTransactionEvent();
+
+
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -168,6 +239,8 @@ public class MainActivity extends AppCompatActivity implements MapView.CurrentLo
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
 
+
+        /*하단 리사이클러뷰
         //함께 배열 생성
         adapter = new Adapter();
         for (int i = 0; i < 10; i++) {
@@ -176,6 +249,8 @@ public class MainActivity extends AppCompatActivity implements MapView.CurrentLo
         }
 
         recyclerView.setAdapter(adapter);
+
+         */
 
     }
 
@@ -279,7 +354,7 @@ public class MainActivity extends AppCompatActivity implements MapView.CurrentLo
         });
     }
 
-    // 권한 체크 이후로직
+    // 카카오 api를 위한 권한 체크 이후로직
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grandResults) {
         // READ_PHONE_STATE의 권한 체크 결과를 불러온다
@@ -373,4 +448,10 @@ public class MainActivity extends AppCompatActivity implements MapView.CurrentLo
     public void onMapViewMoveFinished(MapView mapView, MapPoint mapPoint) {
 
     }
+
+
+
+
+
+
 }

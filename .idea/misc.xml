@@ -5,8 +5,11 @@
       <map>
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/account_vector.xml" value="0.12" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/category_selected.xml" value="0.1" />
+        <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/custom_button.xml" value="0.1625" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/favorite-48px.xml" value="0.1" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/forum-48px.xml" value="0.1" />
+        <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/ic_baseline_dynamic_feed_24.xml" value="0.1625" />
+        <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1625" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1205" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1205" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/drawable/menu_vector.xml" value="0.1" />
@@ -16,6 +19,8 @@
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/activity_main.xml" value="0.10400000000000001" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/activity_main_to_community.xml" value="0.12132725430597771" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/activity_second.xml" value="0.10885416666666667" />
+        <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/board_favorite_item.xml" value="0.20969202898550723" />
+        <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/board_menu_item.xml" value="0.20969202898550723" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/fragment_first.xml" value="0.2" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/fragment_fourth.xml" value="0.215625" />
         <entry key="..\:/CookAndroid/Project/BottomMenu2/app/src/main/res/layout/fragment_main_account_fragment.xml" value="0.2" />
