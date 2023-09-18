@@ -20,6 +20,7 @@
             android:text="가게 즐겨찾기"
             android:textAlignment="center"
             android:textColor="@color/black"
+            android:textStyle="bold"
             android:textSize="20sp" />
 
     </LinearLayout>
